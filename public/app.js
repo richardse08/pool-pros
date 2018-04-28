@@ -10,16 +10,27 @@ const app = new Vue({
             age: '3'
         }
     },
+    computed: {
+        ericNameAge() {
+            return `${this.item1.name} ${this.item1.age}`
+        },
+    },
+    filters: {
+        fullName(value) {
+            return `${value.name} ${value.age}`        
+        }
+    },
     template: `
         <div>
             <h1>header</h1>
             <h2>paragraph</h2>
             <h3>third paragraph</h3>
             <div>div tag</div>
-            <div>First entry name: {{item1.name}}</div>
-            <div>First entry age: {{item1.age}}</div>
-            <div>Second entry name: {{item2.name}}</div>
-            <div>Second entry age: {{item2.age}}</div>
+            <div>filtered: {{item1 | fullName}}</div>
+            <div>filtered2: {{item2 | fullName}}</div>
+            <div>Computed entry name & age: {{ericNameAge}}</div>
+            <div>hardcoded entry name: {{item2.name}}</div>
+            <div>hardcoded entry age: {{item2.age}}</div>
         </div>
     `
 })
