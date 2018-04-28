@@ -1,0 +1,19 @@
+{
+  "name": "pool-pros",
+  "version": "1.0.0",
+  "description": "Pool Pros replica site using Vue to handle front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardse08/pool-pros.git"
+  },
+  "author": "Eric Richards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardse08/pool-pros/issues"
+  },
+  "homepage": "https://github.com/richardse08/pool-pros#readme"
+}
