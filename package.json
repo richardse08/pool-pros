@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/richardse08/pool-pros/issues"
   },
-  "homepage": "https://github.com/richardse08/pool-pros#readme"
+  "homepage": "https://github.com/richardse08/pool-pros#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
