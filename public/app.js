@@ -1,6 +1,24 @@
+Vue.component('my-header', {
+    template: `
+    <div class="top-banner">
+        <div class="banner-contents float-right">
+            <div class="banner-link float-left">Dealers and Distributors</div>
+            <div class="banner-link float-left">Commercial Service</div>
+            <img class="banner-icon float-left" src="/assets/action-commercial-icon.png">
+        </div>
+    </div>
+    `
+})
+
+
+
+
+
+
 const app = new Vue({
     el: "#app",
     data: {
+        friends: ['item1', 'item2'],
         item1: {
             name: 'Eric',
             age: '29'
