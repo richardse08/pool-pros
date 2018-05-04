@@ -5,12 +5,265 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" type="text/css" href="/style.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
-    <body>
-        <div id="app">
-            <!-- <static-posts /> -->
+<body>
+
+<div id="app">
+    <div class="app">
+
+        <div class="top-banner">
+            <div class="banner-contents float-right">
+                <div class="banner-link float-left">Dealers and Distributors</div>
+                <div class="banner-link float-left">Commercial Service</div>
+                <img class="banner-icon float-left" src="/assets/action-commercial-icon.png">
+            </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js"></script>
-        <script src="app.js"></script>
-    </body>
+
+
+
+
+
+
+        <!-- FP header -->
+        <div class="header">
+            <img class="header-logo float-left" src="assets/pool-pros-logo.png">
+            <div class="header-right float-right">
+                <div class="nav float-left">
+                    <div class="dropdown">
+                        <div class="dropbtn highlight">
+                            <div class="nav-item float-left">Pools &amp; Spas</div>
+                            <img class="dropdown-icon" src="assets/next-arrow.png">
+                        </div>
+                        <div class="dropdown-content">
+                            <div class="left-column float-left">
+                                <ul style="list-style-type:none">
+                                    <li v-for="item in navA">{{ item }}</li>
+                                </ul>
+                            </div>
+                            <div class="right-column float-left">
+                                <ul style="list-style-type:none">
+                                    <li v-for="item in navB">{{ item }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- /dropdown -->
+                    <div class="dropdown">
+                        <div class="dropbtn highlight">
+                            <div class="nav-item float-left">Supplies</div>
+                            <img class="dropdown-icon" src="assets/next-arrow.png">
+                        </div>
+                        <div class="dropdown-content">
+                            <div class="left-column">
+                                <div>Filters</div>
+                                <div>Automatic Cleaners</div>
+                            </div>
+                            <div class="right-column">
+                                <div>PH Balance Kits</div>
+                                <div>Heaters</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropbtn highlight">
+                            <div class="nav-item float-left">Resources</div>
+                            <img class="dropdown-icon" src="assets/next-arrow.png">
+                        </div>
+                        <div class="dropdown-content">
+                            <div class="left-column">
+                                <div>Salt vs. Chlorine</div>
+                                <div>Investment Information</div>
+                                <div>Design Gallery</div>
+                            </div>
+                            <div class="right-column">
+                                <div>Financing</div>
+                                <div>Warranties</div>
+                                <div>FAQ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropbtn highlight">
+                            <div class="nav-item float-left">Services</div>
+                            <img class="dropdown-icon" src="assets/next-arrow.png">
+                        </div>
+                        <div class="dropdown-content">
+                            <div class="left-column">
+                                <div>Pool Service</div>
+                                <div>Spa Service</div>
+                            </div>
+                            <div class="right-column">
+                                <div>Pool Installation</div>
+                                <div>Spa Installation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- /nav -->
+                <div class="finder float-right">
+                    <img class="finder-icon float-left" src="assets/location-icon.png">
+                    <div class="finder-text">Find a Pool Pro</div>
+                </div>
+            </div> <!-- /header-right -->
+        </div> <!-- /header -->
+
+
+
+
+
+        
+
+    </div>
+</div>
+
+
+
+<script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        product: 'Socks',
+        image: './assets/vmSocks-green.jpg',
+        inStock: true,
+        navA: ['All Products', 'Indoor Pools', 'Outdoor Pools', 'Concrete Pools', 'Fiberglass Pools'],
+        navB: ['Spas', 'Lighting', 'Water Features', 'Custom Features', 'Tile & Mosaic'],
+        navC: [],
+        navD: [],
+        variants: [
+            {
+                variantId: 2234,
+                variantColor: 'green',
+                variantImage: './assets/vmSocks-green.jpg'
+            },
+            {
+                variantId: 2235,
+                variantColor: 'blue',
+                variantImage: './assets/vmSocks-blue.jpg'
+            }
+        ],
+        cart: 0
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        removeFromCart() {
+            this.cart -= 1
+        },
+        updateProduct(variantImage) {
+            this.image = variantImage
+        }
+    }
+})
+</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="app">
+    <ul>
+        <li v-for="product in products">
+            <input type="number" v-model.number="product.quantity">
+                {{ product.name }}
+            <span v-if="product.quantity < 1">
+                - OUT OF STOCK
+            </span>
+            <button @click="product.quantity += 1">
+                Add
+            </button>
+        </li>
+    </ul>
+    <h2>Total Inventory: {{ totalProducts }}</h2>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            products: [
+                // 'Boots',
+                // 'Jacket',
+                // 'Hiking Socks'
+            ]
+        },
+        computed: {
+            totalProducts() {
+                return this.products.reduce((sum, product) => {
+                    return sum + product.quantity
+                }, 0)
+            }
+        },
+        // instead, fetch our products from an api
+        created () { // what does created do?
+            fetch('https://api.myjson.com/bins/74l63')
+            .then(response => response.json()) // .then() is a promise used to handle asynchronous operations
+            .then(json => {
+                this.products = json.products
+            })
+        }
+    })
+</script> -->
+
+
+
+
+
 </html>
